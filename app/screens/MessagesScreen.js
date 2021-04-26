@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 import Screen from "../components/Screen";
 import ListItem from "../components/lists/ListItem";
@@ -9,14 +9,14 @@ import ListeItemDeleteAction from "../components/lists/ListeItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Aouini Oussama",
+    description: "Bonjours, le projecteur dans la salle 18 est en panne",
     image: require("../assets/mypic.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Aouini Oussama",
+    description: "Probléme d'electricité dans la salle 12",
     image: require("../assets/mypic.jpg"),
   },
 ];

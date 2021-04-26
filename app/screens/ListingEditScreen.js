@@ -18,9 +18,10 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  { label: "Projecteur", value: 1 },
+  { label: "Commande", value: 2 },
+  { label: "Electricité", value: 3 },
+  { label: "Autre", value: 4 },
 ];
 
 function ListingEditScreen() {
@@ -41,12 +42,14 @@ function ListingEditScreen() {
           keyboardType="numeric"
           maxLength={8}
           name="price"
-          placeholder="Price"
+          placeholder="Salle"
+          width={120}
         />
         <AppFormPicker
           items={categories}
           name="category"
-          placeholder="Category"
+          placeholder="Type de Problème"
+          width="50%"
         />
         <AppFormField
           maxLength={255}
