@@ -13,7 +13,7 @@ import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
-  price: Yup.number().required().min(1).max(10000).label("Price"),
+  class: Yup.number().required().min(1).max(10000).label("Class"),
   description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
 });
@@ -30,20 +30,18 @@ function ListingEditScreen() {
     <Screen style={styles.container}>
       <AppForm
         initialValues={{
-          title: "",
-          price: "",
+          class: "",
           description: "",
           category: null,
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"
           maxLength={8}
-          name="price"
-          placeholder="Salle"
+          name="class"
+          placeholder="Class"
           width={120}
         />
         <AppFormPicker
@@ -51,7 +49,7 @@ function ListingEditScreen() {
           name="category"
           numberOfColumns={2}
           PickerItemComponent={CategoryPickerItem}
-          placeholder="Type de Problème"
+          placeholder="Issue type"
           width="50%"
         />
         <AppFormField
@@ -61,7 +59,7 @@ function ListingEditScreen() {
           numberOfLines={3}
           placeholder="Description"
         />
-        <SubmitButton title="Post" />
+        <SubmitButton title="Report" />
       </AppForm>
     </Screen>
   );
