@@ -8,10 +8,16 @@ import AccountScreen from "../screens/AccountScreen";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import LibraryScreen from "../screens/LibraryScreen";
 import MapScreen from "../screens/MapScreen";
+import colors from "../config/colors";
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    tabBarOptions={{
+      activeBackgroundColor: colors.primary,
+      activeTintColor: colors.white,
+    }}
+  >
     <Tab.Screen
       name="Library"
       component={LibraryScreen}

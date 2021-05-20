@@ -6,6 +6,7 @@ import ListItem from "../components/lists/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import ListItemSeparator from "../components/lists/ListItemSeparator";
+import QRCode from "react-native-qrcode-svg";
 
 const menuItems = [
   {
@@ -56,6 +57,9 @@ function AccountScreen(props) {
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#FFE66D" />}
       />
+      <View style={styles.qrcontainer}>
+        <QRCode value={JSON.stringify({ email: "aouiniou@gmail.com" })} />
+      </View>
     </Screen>
   );
 }
@@ -66,6 +70,10 @@ const styles = StyleSheet.create({
   },
   container: {
     marginVertical: 20,
+  },
+  qrcontainer: {
+    alignItems: "center",
+    padding: 30,
   },
 });
 

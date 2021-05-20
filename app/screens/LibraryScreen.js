@@ -54,6 +54,17 @@ const books = [
 function LibraryScreen(props) {
   return (
     <View style={styles.screen}>
+      <SearchBar
+        searchIcon={{ size: 24 }}
+        placeholder="Type Here..."
+        lightTheme
+        round
+        containerStyle={{
+          backgroundColor: colors.light,
+          borderTopWidth: 0,
+          borderBottomWidth: 0,
+        }}
+      />
       <View style={styles.container}>
         <FlatList
           data={books}
@@ -74,6 +85,7 @@ function LibraryScreen(props) {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
+    paddingBottom: 50,
   },
   screen: {
     padding: 20,
