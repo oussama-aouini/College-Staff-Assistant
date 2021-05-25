@@ -9,19 +9,17 @@ import ListeItemDeleteAction from "../components/lists/ListeItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    email: "oussama.aouini@ensi-uma.tn",
-    title: "mobi dick",
-    image: require("../assets/mypic.jpg"),
+    type: "data show",
+    description: "Bonjours, le projecteur dans la salle 18 est en panne",
   },
   {
     id: 2,
-    email: "oussama.aouini@ensi-uma.tn",
-    title: "The song of ice and fire",
-    image: require("../assets/mypic.jpg"),
+    type: "electricity",
+    description: "Probléme d'electricité dans la salle 12",
   },
 ];
 
-function EmpruntsScreen(props) {
+function ProblemsScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -37,9 +35,8 @@ function EmpruntsScreen(props) {
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
           <ListItemcl
-            title={item.email}
-            subTitle={item.title}
-            image={item.image}
+            title={item.type}
+            subTitle={item.description}
             onPress={() => console.log("Message selected", item)}
             renderRightActions={() => (
               <ListeItemDeleteAction onPress={() => handleDelete(item)} />
@@ -65,4 +62,4 @@ function EmpruntsScreen(props) {
 
 const styles = StyleSheet.create({});
 
-export default EmpruntsScreen;
+export default ProblemsScreen;
