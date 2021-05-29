@@ -4,9 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import LendNavigator from "./LendNavigator";
-import AddBookScreen from "../screens/AddBookScreen";
-import EmpruntsScreen from "../screens/EmpruntsScreen";
+import ProblemsScreen from "../screens/ProblemsScreen";
 import AdminAccScreen from "../screens/AdminAccScreen";
 import colors from "../config/colors";
 
@@ -18,31 +16,7 @@ const LibNavigator = () => (
       activeTintColor: colors.white,
     }}
   >
-    <Tab.Screen
-      options={{
-        tabBarIcon: () => <AntDesign name="qrcode" size={24} color="black" />,
-      }}
-      name="Scanner"
-      component={LendNavigator}
-    />
-    <Tab.Screen
-      options={{
-        tabBarIcon: () => (
-          <AntDesign name="pluscircleo" size={24} color="black" />
-        ),
-      }}
-      name="AddBook"
-      component={AddBookScreen}
-    />
-    <Tab.Screen
-      options={{
-        tabBarIcon: () => (
-          <FontAwesome name="history" size={24} color="black" />
-        ),
-      }}
-      name="Emprunts"
-      component={EmpruntsScreen}
-    />
+    <Tab.Screen />
     <Tab.Screen
       name="Account"
       component={AdminAccScreen}
