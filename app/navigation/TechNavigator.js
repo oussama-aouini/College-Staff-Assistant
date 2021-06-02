@@ -1,7 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { AntDesign } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import ProblemsScreen from "../screens/ProblemsScreen";
@@ -16,7 +15,15 @@ const LibNavigator = () => (
       activeTintColor: colors.white,
     }}
   >
-    <Tab.Screen />
+    <Tab.Screen
+      name="Issues"
+      component={ProblemsScreen}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialIcons name="report-problem" size={size} color={color} />
+        ),
+      }}
+    />
     <Tab.Screen
       name="Account"
       component={AdminAccScreen}

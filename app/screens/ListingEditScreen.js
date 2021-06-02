@@ -19,10 +19,25 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Projecteur", value: 1, backgroundColor: "red", icon: "apps" },
-  { label: "Commande", value: 2, backgroundColor: "green", icon: "email" },
-  { label: "Electricité", value: 3, backgroundColor: "blue", icon: "lock" },
-  { label: "Autre", value: 4, backgroundColor: "red", icon: "apps" },
+  {
+    label: "data show",
+    value: 1,
+    backgroundColor: "red",
+    icon: "projector-screen",
+  },
+  {
+    label: "remote",
+    value: 2,
+    backgroundColor: "green",
+    icon: "remote-tv-off",
+  },
+  {
+    label: "electricity",
+    value: 3,
+    backgroundColor: "blue",
+    icon: "power-plug-off",
+  },
+  { label: "others", value: 4, backgroundColor: "orange", icon: "apps" },
 ];
 
 function ListingEditScreen() {

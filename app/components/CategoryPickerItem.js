@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 15,
     alignItems: "center",
-    width: "33%",
+    width: "50%",
   },
   label: {
     marginTop: 5,
