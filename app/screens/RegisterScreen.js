@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
+import axios from "axios";
 
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
@@ -12,6 +13,21 @@ const validationSchema = Yup.object().shape({
 });
 
 function LoginScreen(props) {
+  const submit = () => {
+    axios
+      .post("http://192.168.1.15:9000/user/signup", {
+        email: email,
+        name: name,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Screen style={styles.container}>
       <AppForm
@@ -49,7 +65,7 @@ function LoginScreen(props) {
           secureTextEntry
           textContentType="password"
         />
-        <SubmitButton title="Register" />
+        <SubmitButton title="Register" onPress={submit} />
       </AppForm>
     </Screen>
   );
