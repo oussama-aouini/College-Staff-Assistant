@@ -8,6 +8,7 @@ import LibNavigator from "./app/navigation/LibNavigator";
 import TechNavigator from "./app/navigation/TechNavigator";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import authStorage from "./app/auth/storage";
+import LibraryScreen from "./app/screens/LibraryScreen";
 
 export default function App() {
   const [user, setUser] = useState();
@@ -27,11 +28,5 @@ export default function App() {
     restoreUser();
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ user, setUser }}>
-      <NavigationContainer>
-        {user ? <AppNavigator /> : <AuthNavigator />}
-      </NavigationContainer>
-    </AuthContext.Provider>
-  );
+  return <LibraryScreen />;
 }
