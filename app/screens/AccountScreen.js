@@ -7,14 +7,17 @@ import ListItem from "../components/lists/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import QRCode from "react-native-qrcode-svg";
+import useAuth from "../auth/useAuth";
 
 function AccountScreen(props) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItemnc
-          title="oussama aouini"
-          subTitle="aouiniou@gmail.com"
+          title={user.name}
+          subTitle={user.email}
           image={require("../assets/mypic.jpg")}
         />
       </View>
@@ -22,13 +25,11 @@ function AccountScreen(props) {
         <ListItem
           title="Log Out"
           IconComponent={<Icon name="logout" backgroundColor="#FFE66D" />}
+          onPress={() => logOut()}
         />
       </View>
       <View style={styles.qrcontainer}>
-        <QRCode
-          size={200}
-          value={JSON.stringify({ email: "aouiniou@gmail.com" })}
-        />
+        <QRCode size={200} value={user.email} />
       </View>
     </Screen>
   );
