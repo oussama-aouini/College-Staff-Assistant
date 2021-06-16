@@ -48,10 +48,15 @@ function ProblemsScreen(props) {
         onRefresh={() => {
           setMessages([
             {
-              id: 2,
-              title: "T2",
-              description: "D2",
-              image: require("../assets/mypic.jpg"),
+              id: 3,
+              type: "Other",
+              description: "table cassé dans salle 20",
+            },
+            {
+              id: 1,
+              type: "data show",
+              description:
+                "Bonjours, le projecteur dans la salle 18 est en panne",
             },
           ]);
         }}

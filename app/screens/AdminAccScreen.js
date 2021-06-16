@@ -6,17 +6,26 @@ import ListItemnc from "../components/lists/ListItemnc";
 import ListItem from "../components/lists/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
+import QRCode from "react-native-qrcode-svg";
+import useAuth from "../auth/useAuth";
 
 function AccountScreen(props) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
-        <ListItemnc title="admin" subTitle="admin@ensi-uma.tn" />
+        <ListItemnc
+          title={user.name}
+          subTitle={user.email}
+          image={require("../assets/account.jpg")}
+        />
       </View>
       <View style={styles.logout}>
         <ListItem
           title="Log Out"
           IconComponent={<Icon name="logout" backgroundColor="#FFE66D" />}
+          onPress={() => logOut()}
         />
       </View>
     </Screen>

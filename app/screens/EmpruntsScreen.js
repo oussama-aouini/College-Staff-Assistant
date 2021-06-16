@@ -51,9 +51,21 @@ function EmpruntsScreen(props) {
         onRefresh={() => {
           setMessages([
             {
+              id: 3,
+              email: "najem.marzouky@ensi-uma.tn",
+              title: "The song of ice and fire",
+              image: require("../assets/najem.jpg"),
+            },
+            {
+              id: 1,
+              email: "oussama.aouini@ensi-uma.tn",
+              title: "mobi dick",
+              image: require("../assets/mypic.jpg"),
+            },
+            {
               id: 2,
-              title: "T2",
-              description: "D2",
+              email: "oussama.aouini@ensi-uma.tn",
+              title: "The song of ice and fire",
               image: require("../assets/mypic.jpg"),
             },
           ]);

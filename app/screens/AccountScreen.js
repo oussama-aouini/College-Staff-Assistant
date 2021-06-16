@@ -18,7 +18,7 @@ function AccountScreen(props) {
         <ListItemnc
           title={user.name}
           subTitle={user.email}
-          image={require("../assets/mypic.jpg")}
+          image={require("../assets/account.jpg")}
         />
       </View>
       <View style={styles.logout}>

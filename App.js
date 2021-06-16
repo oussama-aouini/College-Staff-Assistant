@@ -9,6 +9,8 @@ import TechNavigator from "./app/navigation/TechNavigator";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import authStorage from "./app/auth/storage";
 import LibraryScreen from "./app/screens/LibraryScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import AddBookScreen from "./app/screens/AddBookScreen";
 
 export default function App() {
   const [user, setUser] = useState();
@@ -28,5 +30,11 @@ export default function App() {
     restoreUser();
   }, []);
 
-  return <LibraryScreen />;
+  return (
+    <AuthContext.Provider value={{ user, setUser }}>
+      <NavigationContainer>
+        {user ? <LibNavigator /> : <AuthNavigator />}
+      </NavigationContainer>
+    </AuthContext.Provider>
+  );
 }

@@ -7,20 +7,151 @@ import BookCard from "../components/BookCard";
 import colors from "../config/colors";
 import booksApi from "../api/books";
 
+const books = [
+  {
+    id: 1,
+    title: "moby dick",
+    author: "Herman Melville",
+    image: require("../assets/nocover.jpg"),
+  },
+  {
+    id: 2,
+    title: "the three musketeers",
+    author: "Alexandre Dumas",
+    image: require("../assets/cover2.jpg"),
+  },
+  {
+    id: 3,
+    title: "A Game of Thrones",
+    author: "George R. R. Martin",
+    image: require("../assets/cover1.jpg"),
+  },
+  {
+    id: 4,
+    title: "Greenlights",
+    author: "HMatthew McConaughey",
+    image: require("../assets/nocover.jpg"),
+  },
+  {
+    id: 5,
+    title: "the three musketeers",
+    author: "Alexandre Dumas",
+    image: require("../assets/nocover.jpg"),
+  },
+  {
+    id: 6,
+    title: "A Game of Thrones",
+    author: "George R. R. Martin",
+    image: require("../assets/nocover.jpg"),
+  },
+  {
+    id: 7,
+    title: "Greenlights",
+    author: "HMatthew McConaughey",
+    image: require("../assets/cover3.jpg"),
+  },
+];
+
 function LibraryScreen(props) {
-  const [books, setBooks] = useState([]);
-  const [filterBooks, setFilterBooks] = useState([]);
+  const [books, setBooks] = useState([
+    {
+      id: 1,
+      title: "moby dick",
+      author: "Herman Melville",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 2,
+      title: "the three musketeers",
+      author: "Alexandre Dumas",
+      image: require("../assets/cover2.jpg"),
+    },
+    {
+      id: 3,
+      title: "A Game of Thrones",
+      author: "George R. R. Martin",
+      image: require("../assets/cover1.jpg"),
+    },
+    {
+      id: 4,
+      title: "Greenlights",
+      author: "HMatthew McConaughey",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 5,
+      title: "the three musketeers",
+      author: "Alexandre Dumas",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 6,
+      title: "A Game of Thrones",
+      author: "George R. R. Martin",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 7,
+      title: "Greenlights",
+      author: "HMatthew McConaughey",
+      image: require("../assets/cover3.jpg"),
+    },
+  ]);
+  const [filterBooks, setFilterBooks] = useState([
+    {
+      id: 1,
+      title: "moby dick",
+      author: "Herman Melville",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 2,
+      title: "the three musketeers",
+      author: "Alexandre Dumas",
+      image: require("../assets/cover2.jpg"),
+    },
+    {
+      id: 3,
+      title: "A Game of Thrones",
+      author: "George R. R. Martin",
+      image: require("../assets/cover1.jpg"),
+    },
+    {
+      id: 4,
+      title: "Greenlights",
+      author: "HMatthew McConaughey",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 5,
+      title: "the three musketeers",
+      author: "Alexandre Dumas",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 6,
+      title: "A Game of Thrones",
+      author: "George R. R. Martin",
+      image: require("../assets/nocover.jpg"),
+    },
+    {
+      id: 7,
+      title: "Greenlights",
+      author: "HMatthew McConaughey",
+      image: require("../assets/cover3.jpg"),
+    },
+  ]);
   const [search, setsearch] = useState("");
 
-  useEffect(() => {
-    loadBooks();
-  }, []);
+  // useEffect(() => {
+  //   loadBooks();
+  // }, []);
 
-  const loadBooks = async () => {
-    const response = await booksApi.getBooks();
-    setBooks(response.data);
-    setFilterBooks(response.data);
-  };
+  // const loadBooks = async () => {
+  //   const response = await booksApi.getBooks();
+  //   setBooks(response.data);
+  //   setFilterBooks(response.data);
+  // };
 
   const searchFilter = (text) => {
     if (text) {
@@ -83,7 +214,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     height: 45,
     marginTop: 15,
-    marginBottom: 15,
     backgroundColor: "#d3d3d3",
     alignContent: "center",
     padding: 10,
